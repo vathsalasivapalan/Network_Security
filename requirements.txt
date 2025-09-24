@@ -8,5 +8,6 @@ jupyter
 python-dotenv
 certifi
 pymongo
+pymongo[srv]
 
 -e .
