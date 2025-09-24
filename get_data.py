@@ -3,10 +3,13 @@ import sys
 import json
 
 from dotenv  import load_dotenv 
-# pip install python-dotenv
-
+load_dotenv()
+MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+print(MONGO_DB_URL)
 
 import certifi
+ca = certifi.where()
+
 import pandas as pd
 import numpy as np
 import pymongo  
@@ -37,3 +40,5 @@ class NetworkdataExtract():
 
     if __name__ == "__main__":
         pass
+    
+    
