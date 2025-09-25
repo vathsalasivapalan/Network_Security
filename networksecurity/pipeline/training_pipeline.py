@@ -1,8 +1,8 @@
 import os
 import sys
 
-from networksecurity.logger import logging
-from networksecurity.exception import NetworkSecurityException
+from networksecurity.exception.exception import NetworkSecurityException
+from networksecurity.logger.logger import logging
 
 from networksecurity.components.data_ingestion import DataIngestion
 from networksecurity.components.data_validation import DataValidation
