@@ -1,3 +1,4 @@
 .env
 nets
 networksecurity.egg-info
+logs/
