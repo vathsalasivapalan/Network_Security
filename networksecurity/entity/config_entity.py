@@ -8,8 +8,11 @@ print(training_pipeline.PIPELINE_NAME)
 
 
 class TrainingPipelineConfig:
-    def __init__(self):
-        pass 
+    def __init__(self,timestamp=datetime.now()):
+        timestamp =timestamp.strftime("%m_%d_%Y_%H_%M_%S")
+        self.pipeline_name=training_pipeline.PIPELINE_NAME
+      
+        
 
 class DataIngestionConfig:
     def __init__(self):
