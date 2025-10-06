@@ -9,5 +9,7 @@ python-dotenv
 certifi
 pymongo
 pymongo[srv]
+pyyaml
+dill
 
 -e .
