@@ -51,6 +51,7 @@ class DataValidationConfig:
 
 class DataTransformationConfig:
     def __init__(self,training_pipeline_config):
+        pass
         
         
 
