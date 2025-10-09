@@ -3,3 +3,5 @@ nets
 networksecurity.egg-info
 logs/
 Artifacts/
+__pycache__/
+
