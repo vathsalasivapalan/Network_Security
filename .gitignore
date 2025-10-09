@@ -4,4 +4,4 @@ networksecurity.egg-info
 logs/
 Artifacts/
 __pycache__/
-
+*.pyc
