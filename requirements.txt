@@ -11,5 +11,7 @@ pymongo
 pymongo[srv]
 pyyaml
 dill
+xgboost
+
 
 -e .
