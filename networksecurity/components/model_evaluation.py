@@ -1,4 +1,5 @@
 
+
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logger.logger import logging
 import os,sys
@@ -62,9 +63,6 @@ class ModelEvaluation:
                 logging.info(f"Model evaluation artifact: {model_evaluation_artifact}")
                 model_eval_report = model_evaluation_artifact.__dict__
 
-                write_yaml_file(self.model_eval_config.report_file_path, model_eval_report)
-                return model_evaluation_artifact
-
             latest_model_path = model_resolver.get_best_model_path()
             latest_model = load_object(file_path=latest_model_path)
             train_model = load_object(file_path=train_model_file_path)
@@ -90,7 +88,7 @@ class ModelEvaluation:
                     trained_model_path=train_model_file_path, 
                     train_model_metric_artifact=trained_metric, 
                     best_model_metric_artifact=latest_metric)
-
+            
             model_eval_report = model_evaluation_artifact.__dict__
             
             #print(model_eval_report)
