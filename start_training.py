@@ -1,6 +1,3 @@
-import warnings
-warnings.filterwarnings("ignore") 
-
 import os
 import sys
 
@@ -16,6 +13,7 @@ def start_training():
 
         model_training=TrainingPipeline()
         model_training.run_pipeline()
+        
     except Exception as e:
         raise NetworkSecurityException(e,sys)
     

@@ -1,17 +1,20 @@
-pandas 
-numpy
-scipy
-scikit-learn
-matplotlib
-seaborn
-jupyter
 python-dotenv
-certifi
+pandas
+numpy
 pymongo
+certifi
 pymongo[srv]
-pyyaml
+scikit-learn
 dill
+pyyaml
 xgboost
-
+fastapi
+uvicorn
+ipykernel
+apache-airflow
+mlflow
+dvc
+jinja2
+python-multipart
 
 -e .
