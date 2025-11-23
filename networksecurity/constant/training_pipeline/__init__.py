@@ -17,7 +17,7 @@ PREPROCESSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 MODEL_FILE_NAME = "model.pkl"
 SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
 SCHEMA_DROP_COLS = "drop_columns"
-SAVED_MODEL_DIR =os.path.join("saved_models")
+SAVED_MODEL_DIR = os.path.join("saved_models")
 
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME

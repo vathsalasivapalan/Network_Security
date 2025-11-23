@@ -11,12 +11,13 @@ import os,sys
 
 class DataValidation:
     def __init__(self,data_ingestion_artifact:DataIngestionArtifact,
-                 data_validation_config:DataValidationConfig):
+                 data_validation_config:DataValidationConfig): 
         
         try:
             self.data_ingestion_artifact=data_ingestion_artifact
             self.data_validation_config=data_validation_config
-            self._schema_config = read_yaml_file(SCHEMA_FILE_PATH)
+            self._schema_config = read_yaml_file(SCHEMA_FILE_PATH) # _schema_config : _ means private
+            
         except Exception as e:
             raise NetworkSecurityException(e,sys)
     
@@ -35,9 +36,6 @@ class DataValidation:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
             
-            
-        except Exception as e:
-            raise NetworkSecurityException(e,sys)
         
     def is_numerical_column_exist(self,dataframe:pd.DataFrame)->bool:
         try:
@@ -53,6 +51,7 @@ class DataValidation:
             
             logging.info(f"Missing numerical columns: [{missing_numerical_columns}]")
             return numerical_column_present
+        
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
@@ -61,6 +60,7 @@ class DataValidation:
     def read_data(file_path)->pd.DataFrame:
         try:
             return pd.read_csv(file_path)
+        
         except Exception as e:
             raise NetworkSecurityException(e,sys)
     
@@ -140,5 +140,6 @@ class DataValidation:
             logging.info(f"Data validation artifact: {data_validation_artifact}")
 
             return data_validation_artifact
+        
         except Exception as e:
             raise NetworkSecurityException(e,sys)

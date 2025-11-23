@@ -5,8 +5,8 @@ pymongo
 certifi
 pymongo[srv]
 scikit-learn
-dill
-pyyaml
+dill  # used to save and load python objects
+pyyaml # used to read  and write yaml files
 xgboost
 fastapi
 uvicorn

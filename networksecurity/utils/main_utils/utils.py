@@ -6,7 +6,7 @@ import numpy as np
 import dill
 import pickle
 
-
+# read and write using pyyaml file 
 def read_yaml_file(file_path: str) -> dict:
     try:
         with open(file_path, "rb") as yaml_file:
@@ -28,7 +28,7 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
     
     
     
-    
+# save and load  using numpy file
 def save_numpy_array_data(file_path: str, array: np.array):
     """
     Save numpy array data to file
@@ -59,7 +59,8 @@ def load_numpy_array_data(file_path: str) -> np.array:
 
 
     
-    
+# save and load using dill package
+
 def save_object(file_path: str, obj: object) -> None:
     try:
         logging.info("Entered the save_object method of MainUtils class")
