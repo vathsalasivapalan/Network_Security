@@ -95,7 +95,8 @@ class ModelTrainer:
             )
 
             # ✅ Use hyperparameter tuning
-            model = self.train_model(x_train, y_train)
+            model = self.perform_hyper_parameter_tunig(x_train, y_train)
+
 
             y_train_pred = model.predict(x_train)
             classification_train_metric = get_classification_score(y_true=y_train, y_pred=y_train_pred)

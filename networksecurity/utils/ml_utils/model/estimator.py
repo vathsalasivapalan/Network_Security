@@ -48,7 +48,10 @@ class ModelResolver:
             timestamps = os.listdir(self.model_dir)
             if len(timestamps)==0:
                 return False
-            
+
+            timestamps = [t for t in timestamps if t.isdigit()]
+            if len(timestamps) == 0:
+                return False
             latest_model_path = self.get_best_model_path()
 
             if not os.path.exists(latest_model_path):

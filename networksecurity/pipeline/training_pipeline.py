@@ -112,7 +112,7 @@ class TrainingPipeline:
                                        data_validation_artifact,
                                        model_trainer_artifact)
             
-            model_eval_artifact= model_eval.initiate_model_evaluation()
+            model_eval_artifact = model_eval.initiate_model_evaluation()
             
             return  model_eval_artifact
 
@@ -135,7 +135,7 @@ class TrainingPipeline:
             #print(data_ingestion_artifact)
             
             data_validation_artifact=self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
-            print(data_validation_artifact)
+            # print(data_validation_artifact)
            
             data_transformation_artifact=self.start_data_transformation(data_validation_artifact=data_validation_artifact)
             #print(data_transformation_artifact)
