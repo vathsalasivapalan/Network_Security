@@ -102,8 +102,9 @@ class TrainingPipeline:
 
         except Exception as e:
             raise NetworkSecurityException(e, sys)
-    def start_model_evaluation(self,data_validation_artifact:DataValidationArtifact,
-                                 model_trainer_artifact:ModelTrainerArtifact):
+    def start_model_evaluation(self,
+                            data_validation_artifact:DataValidationArtifact,
+                            model_trainer_artifact:ModelTrainerArtifact):
         try:
             model_evaluation_config:ModelEvaluationConfig=ModelEvaluationConfig(
                 training_pipeline_config=self.training_pipeline_config) 
