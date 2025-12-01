@@ -24,13 +24,13 @@ class ModelPusher:
 
             # Creating model pusher dir to save model
             model_file_path = self.model_pusher_config.model_file_path
-            model_dir = os.path.dirname(model_file_path) or "."        # ⭐ FIX
+            model_dir = os.path.dirname(model_file_path) or "."        # fixed
             os.makedirs(model_dir, exist_ok=True)
             shutil.copy(src=trained_model_path, dst=model_file_path)
 
             # saved model dir
             saved_model_path = self.model_pusher_config.saved_model_path
-            saved_model_dir = os.path.dirname(saved_model_path) or "."  # ⭐ FIX
+            saved_model_dir = os.path.dirname(saved_model_path) or "." # fixed
             os.makedirs(saved_model_dir, exist_ok=True)
             shutil.copy(src=trained_model_path, dst=saved_model_path)
 
