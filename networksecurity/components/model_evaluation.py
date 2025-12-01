@@ -1,9 +1,7 @@
 
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logger.logger import logging
-
 import os,sys
-
 from networksecurity.entity.artifact_entity import DataValidationArtifact,ModelTrainerArtifact,ModelEvaluationArtifact
 from networksecurity.entity.config_entity import ModelEvaluationConfig
 from networksecurity.utils.ml_utils.metric.classification_metric import get_classification_score
@@ -11,18 +9,17 @@ from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 from networksecurity.utils.main_utils.utils import save_object,load_object,write_yaml_file
 from networksecurity.utils.ml_utils.model.estimator import ModelResolver
 from networksecurity.constant.training_pipeline import TARGET_COLUMN
-
 import pandas  as  pd
 import mlflow
 import mlflow.sklearn
 class ModelEvaluation:
     def __init__(self,model_eval_config:ModelEvaluationConfig,
                     data_validation_artifact:DataValidationArtifact,
-                    model_trainer_artifact:ModelTrainerArtifact): # loacl variable
+                    model_trainer_artifact:ModelTrainerArtifact):
         try:
             self.model_eval_config=model_eval_config
             self.data_validation_artifact=data_validation_artifact
-            self.model_trainer_artifact=model_trainer_artifact # object variable
+            self.model_trainer_artifact=model_trainer_artifact
         
         except Exception as e:
             raise NetworkSecurityException(e,sys)
@@ -62,14 +59,12 @@ class ModelEvaluation:
                     trained_model_path=train_model_file_path, 
                     train_model_metric_artifact=self.model_trainer_artifact.test_metric_artifact, 
                     best_model_metric_artifact=None)
-                
                 logging.info(f"Model evaluation artifact: {model_evaluation_artifact}")
                 model_eval_report = model_evaluation_artifact.__dict__
-                
-                
+
                 write_yaml_file(self.model_eval_config.report_file_path, model_eval_report)
                 return model_evaluation_artifact
-            
+
             latest_model_path = model_resolver.get_best_model_path()
             latest_model = load_object(file_path=latest_model_path)
             train_model = load_object(file_path=train_model_file_path)
@@ -95,7 +90,7 @@ class ModelEvaluation:
                     trained_model_path=train_model_file_path, 
                     train_model_metric_artifact=trained_metric, 
                     best_model_metric_artifact=latest_metric)
-            
+
             model_eval_report = model_evaluation_artifact.__dict__
             
             #print(model_eval_report)

@@ -7,8 +7,8 @@ from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logger.logger import logging
 
 
-class NetworkModel:
-    def __init__(self,preprocessor,model):
+class NetworkModel: 
+    def __init__(self,preprocessor,model):  # scalig and encoder / model:classifier/regressor
         try:
             self.preprocessor = preprocessor
             self.model = model
